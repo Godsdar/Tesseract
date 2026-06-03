@@ -1,19 +1,30 @@
-# Tesseract
+# Tesseract 4D Visualization
 
-Welcome to the Tesseract Project!
+An interactive 3D/4D tesseract (hypercube) visualization built with modern web technologies. Experience the beauty of four-dimensional geometry rendered in real-time.
 
-## Introduction
-This repository was created as part of an Upwork demonstration. It contains:
-- Screenshots of the desktop
-- Example project structure
+## Features
+- **Real-time 4D Rendering**: Smooth animation of a rotating tesseract
+- **Interactive Controls**: Adjust rotation speed, projection, and visual parameters
+- **Modern Tech Stack**: Built with pure JavaScript and HTML5 Canvas/WebGL
+- **Responsive Design**: Adaptive layout that works on all screen sizes
+- **Minimalist UI**: Clean, focused visualization without distractions
 
-## Screenshots
+## Tech Stack
+- **Frontend**: JavaScript (ES6+), HTML5, CSS3
+- **Rendering**: HTML5 Canvas API or WebGL
+- **Build Tools**: Vite (fast development server and bundling)
+- **Math**: Custom 4D projection algorithms
 
-Below are screenshots of the desktop. (They will display below once you add screenshot1.png and screenshot2.png to this folder.)
+## Mathematics Behind It
 
-![Screenshot 1](<img width="1724" height="1076" alt="tesseract demo 1" src="https://github.com/user-attachments/assets/c024d2d6-ee80-4a4f-98d6-7f7f7f8b9c02" />
-)
+A tesseract is a 4D hypercube, analogous to how a cube is a 3D object. This project visualizes the projection of a 4D object onto a 2D screen through:
+1. 4D rotation matrices
+2. Projection from 4D to 3D
+3. Final projection from 3D to 2D
 
----
+## Installation & Setup
 
-_Contact me for customizations or more information._
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Godsdar/tesseract.git
+   cd tesseract
