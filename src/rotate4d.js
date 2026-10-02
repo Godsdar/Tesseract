@@ -1,5 +1,3 @@
-import * as THREE from "three";
-
 export default function rotate4d(v, angle) {
   const cos = Math.cos(angle);
   const sin = Math.sin(angle);

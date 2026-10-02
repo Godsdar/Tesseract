@@ -1,8 +1,6 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/Addons.js";
-import { MeshBasicNodeMaterial } from "three/webgpu";
 import calculatePositions from "./calculatePositions.js";
-import { bufferAttribute } from "three/src/nodes/TSL.js";
 
 let scene, camera, renderer, geometry, positions, tesseract;
 
@@ -25,8 +23,7 @@ function init() {
   document.body.appendChild(renderer.domElement);
   camera.position.z = 7;
 
-  const angle = 0.000001;
-  positions = calculatePositions(angle);
+  positions = calculatePositions();
   geometry = new THREE.BufferGeometry();
   geometry.setAttribute("position", new THREE.Float32BufferAttribute(positions, 3));
   geometry.attributes.position.needsUpdate = true;

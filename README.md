@@ -1,30 +1,32 @@
-# Tesseract 4D Visualization
+# Tesseract
 
-An interactive 3D/4D tesseract (hypercube) visualization built with modern web technologies. Experience the beauty of four-dimensional geometry rendered in real-time.
+A 4D hypercube (tesseract) rendered in the browser.
 
-## Features
-- **Real-time 4D Rendering**: Smooth animation of a rotating tesseract
-- **Interactive Controls**: Adjust rotation speed, projection, and visual parameters
-- **Modern Tech Stack**: Built with pure JavaScript and HTML5 Canvas/WebGL
-- **Responsive Design**: Adaptive layout that works on all screen sizes
-- **Minimalist UI**: Clean, focused visualization without distractions
+![4D tesseract wireframe](docs/tesseract.png)
 
-## Tech Stack
-- **Frontend**: JavaScript (ES6+), HTML5, CSS3
-- **Rendering**: HTML5 Canvas API or WebGL
-- **Build Tools**: Vite (fast development server and bundling)
-- **Math**: Custom 4D projection algorithms
+## What it does
 
-## Mathematics Behind It
+- Builds the 16 vertices and 32 edges of a tesseract in code.
+- Rotates them in the y-w plane every frame.
+- Projects 4D to 3D with a perspective divide, then draws the wireframe.
+- Orbit controls let you move around the shape.
 
-A tesseract is a 4D hypercube, analogous to how a cube is a 3D object. This project visualizes the projection of a 4D object onto a 2D screen through:
-1. 4D rotation matrices
-2. Projection from 4D to 3D
-3. Final projection from 3D to 2D
+## Stack
 
-## Installation & Setup
+JavaScript, three.js, Vite, `node --test`, ESLint.
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Godsdar/tesseract.git
-   cd tesseract
+## Run it
+
+```bash
+npm install
+npm run dev      # http://localhost:5173
+npm test         # tests for the 4D math
+npm run build    # production build
+```
+
+## What was hard
+
+Deriving the 32 edges without hardcoding them was the interesting part. Two
+vertices are neighbours when their indices differ by one bit, so the same code
+would work for any hypercube, not only 4D. Keeping the math in small pure
+functions is what made the tests possible; the render loop stays separate.
